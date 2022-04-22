@@ -2,6 +2,16 @@
 
 O editor é [Kilo](https://github.com/antirez/kilo) do usuário [Antirez](https://github.com/antirez).
 
+## Descrição do editor
+
+* Mais ou menos 1000 linhas de código C;
+* Sem dependências além da biblioteca padrão;
+* Funcionalidades
+  * Destaque de Síntaxe
+  * Procura de texto
+  * Teclas de atalhos e comandos
+  * Barra com informação de linha e coluna
+
 ## Referências
 
 * Publicação original aonde Antirez descreve o processo e os motivos da criação do editor: [http://antirez.com/latest/0](http://antirez.com/latest/0)
