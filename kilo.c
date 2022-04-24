@@ -1,4 +1,5 @@
 #include <ctype.h>
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <termios.h>
@@ -6,13 +7,20 @@
 
 struct termios orig_termios;
 
+void die(const char *s) {
+  perror(s);
+  exit(1);
+}
+
 void disableRawMode() {
   // This is because of the TCSAFLUSH option being passed to tcsetattr() when the program exits
   // it discards any unread input before applying the changes to the terminal
-  tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig_termios);
+  if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &orig_termios) == -1)
+    die("tcsetattr");
 }
 
 void enableRawMode() {
+  if (tcgetattr(STDIN_FILENO, &orig_termios) == -1) die("tcgetattr");
   tcgetattr(STDIN_FILENO, &orig_termios);
   // atexit() comes from <stdlib.h>.
   // We use it to register our disableRawMode() function to be called automatically when the program exits
@@ -26,6 +34,7 @@ void enableRawMode() {
   raw.c_cc[VTIME] = 1;
 
   tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw);
+  if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw) == -1) die("tcsetattr");
 }
 
 
@@ -34,6 +43,10 @@ int main() {
 
   while (1) {
     char c = '\0';
+    // In Cygwin, when read() times out it returns -1 with an errno of EAGAIN,
+    // instead of just returning 0 like it’s supposed to.
+    // To make it work in Cygwin, we won’t treat EAGAIN as an error.
+    if (read(STDIN_FILENO, &c, 1) == -1 && errno != EAGAIN) die("read");
     read(STDIN_FILENO, &c, 1);
     if (iscntrl(c)) {
       printf("%d\r\n", c);
