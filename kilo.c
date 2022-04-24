@@ -18,6 +18,7 @@ void enableRawMode() {
   // We use it to register our disableRawMode() function to be called automatically when the program exits
   atexit(disableRawMode);
   struct termios raw = orig_termios;
+  raw.c_iflag &= ~(IXON);
   raw.c_lflag &= ~(ECHO | ICANON | ISIG);
   tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw);
 }
