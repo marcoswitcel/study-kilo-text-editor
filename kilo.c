@@ -18,7 +18,8 @@ void enableRawMode() {
   // We use it to register our disableRawMode() function to be called automatically when the program exits
   atexit(disableRawMode);
   struct termios raw = orig_termios;
-  raw.c_iflag &= ~(ICRNL | IXON);;
+  raw.c_iflag &= ~(ICRNL | IXON);
+  raw.c_oflag &= ~(OPOST);
   raw.c_lflag &= ~(ECHO | ICANON | IEXTEN | ISIG);
   tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw);
 }
@@ -30,9 +31,9 @@ int main() {
   char c;
   while (read(STDIN_FILENO, &c, 1) == 1 && c != 'q') {
     if (iscntrl(c)) {
-      printf("%d\n", c);
+      printf("%d\r\n", c);
     } else {
-      printf("%d ('%c')\n", c, c);
+      printf("%d ('%c')\r\n", c, c);
     }
   }
   return 0;
