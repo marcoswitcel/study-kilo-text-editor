@@ -48,24 +48,47 @@ void enableRawMode() {
   if (tcsetattr(STDIN_FILENO, TCSAFLUSH, &raw) == -1) die("tcsetattr");
 }
 
+/**
+ * @brief editorReadKey()’s job is to wait for one keypress, and return it.
+ * Later, we’ll expand this function to handle escape sequences, which
+ * involves reading multiple bytes that represent a single keypress, as is
+ * the case with the arrow keys.
+ * 
+ * @return char 
+ */
+char editorReadKey() {
+  int nread;
+  char c;
+  while ((nread = read(STDIN_FILENO, &c, 1)) != 1) {
+    if (nread == -1 && errno != EAGAIN) die("read");
+  }
+  return c;
+}
+
+/*** input ***/
+
+/**
+ * @brief editorProcessKeypress() waits for a keypress, and then handles it.
+ * Later, it will map various Ctrl key combinations and other special keys
+ * to different editor functions, and insert any alphanumeric and other
+ * printable keys’ characters into the text that is being edited.
+ */
+void editorProcessKeypress() {
+  char c = editorReadKey();
+  switch (c) {
+    case CTRL_KEY('q'):
+      exit(0);
+      break;
+  }
+}
+
 /*** init ***/
 
 int main() {
   enableRawMode();
 
   while (1) {
-    char c = '\0';
-    // In Cygwin, when read() times out it returns -1 with an errno of EAGAIN,
-    // instead of just returning 0 like it’s supposed to.
-    // To make it work in Cygwin, we won’t treat EAGAIN as an error.
-    if (read(STDIN_FILENO, &c, 1) == -1 && errno != EAGAIN) die("read");
-    read(STDIN_FILENO, &c, 1);
-    if (iscntrl(c)) {
-      printf("%d\r\n", c);
-    } else {
-      printf("%d ('%c')\r\n", c, c);
-    }
-    if (c == CTRL_KEY('q')) break;
+    editorProcessKeypress();
   }
   return 0;
 }
