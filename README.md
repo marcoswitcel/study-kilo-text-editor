@@ -19,5 +19,7 @@ O editor é [Kilo](https://github.com/antirez/kilo) do usuário [Antirez](https:
 * Software Flow Control: [https://en.wikipedia.org/wiki/Software_flow_control](https://en.wikipedia.org/wiki/Software_flow_control)
 * VT100: [https://en.wikipedia.org/wiki/VT100](https://en.wikipedia.org/wiki/VT100)
 * VT100 User Guide: [https://vt100.net/docs/vt100-ug/chapter3.html](https://vt100.net/docs/vt100-ug/chapter3.html)
+  * [https://vt100.net/docs/vt100-ug/chapter3.html#ED](https://vt100.net/docs/vt100-ug/chapter3.html#ED)
+  * [https://vt100.net/docs/vt100-ug/chapter3.html#CUP](https://vt100.net/docs/vt100-ug/chapter3.html#CUP)
 * Ncurses: [https://en.wikipedia.org/wiki/Ncurses](https://en.wikipedia.org/wiki/Ncurses)
 * Terminfo database: [https://en.wikipedia.org/wiki/Terminfo](https://en.wikipedia.org/wiki/Terminfo)
