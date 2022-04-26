@@ -70,8 +70,24 @@ char editorReadKey() {
 
 /*** output ***/
 
+/**
+ * @brief editorDrawRows() will handle drawing each row of the buffer of
+ * text being edited. For now it draws a tilde in each row, which means
+ * that row is not part of the file and can’t contain any text.
+ */
+void editorDrawRows() {
+  int y;
+  for (y = 0; y < 24; y++) {
+    write(STDOUT_FILENO, "~\r\n", 3);
+  }
+}
+
 void editorRefreshScreen() {
   write(STDOUT_FILENO, "\x1b[2J", 4);
+  write(STDOUT_FILENO, "\x1b[H", 3);
+
+  editorDrawRows();
+
   write(STDOUT_FILENO, "\x1b[H", 3);
 }
 
