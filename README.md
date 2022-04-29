@@ -25,5 +25,8 @@ O editor é [Kilo](https://github.com/antirez/kilo) do usuário [Antirez](https:
   * [https://vt100.net/docs/vt100-ug/chapter3.html#CUD](https://vt100.net/docs/vt100-ug/chapter3.html#CUD)
   * [https://vt100.net/docs/vt100-ug/chapter3.html#DSR](https://vt100.net/docs/vt100-ug/chapter3.html#DSR)
   * [https://vt100.net/docs/vt100-ug/chapter3.html#CPR](https://vt100.net/docs/vt100-ug/chapter3.html#CPR)
+  * [https://vt100.net/docs/vt100-ug/chapter3.html#SM](https://vt100.net/docs/vt100-ug/chapter3.html#SM)
+  * [https://vt100.net/docs/vt100-ug/chapter3.html#RM](https://vt100.net/docs/vt100-ug/chapter3.html#RM)
+  * [https://vt100.net/docs/vt100-ug/chapter3.html#S3.3.4](https://vt100.net/docs/vt100-ug/chapter3.html#S3.3.4)
 * Ncurses: [https://en.wikipedia.org/wiki/Ncurses](https://en.wikipedia.org/wiki/Ncurses)
 * Terminfo database: [https://en.wikipedia.org/wiki/Terminfo](https://en.wikipedia.org/wiki/Terminfo)
