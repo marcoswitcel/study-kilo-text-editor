@@ -28,6 +28,7 @@ O editor é [Kilo](https://github.com/antirez/kilo) do usuário [Antirez](https:
   * [https://vt100.net/docs/vt100-ug/chapter3.html#SM](https://vt100.net/docs/vt100-ug/chapter3.html#SM)
   * [https://vt100.net/docs/vt100-ug/chapter3.html#RM](https://vt100.net/docs/vt100-ug/chapter3.html#RM)
   * [https://vt100.net/docs/vt100-ug/chapter3.html#S3.3.4](https://vt100.net/docs/vt100-ug/chapter3.html#S3.3.4)
+  * [https://vt100.net/docs/vt100-ug/chapter3.html#SGR](https://vt100.net/docs/vt100-ug/chapter3.html#SGR)
 * Ncurses: [https://en.wikipedia.org/wiki/Ncurses](https://en.wikipedia.org/wiki/Ncurses)
 * Terminfo database: [https://en.wikipedia.org/wiki/Terminfo](https://en.wikipedia.org/wiki/Terminfo)
 * Feature Test Macro: [https://www.gnu.org/software/libc/manual/html_node/Feature-Test-Macros.html](https://www.gnu.org/software/libc/manual/html_node/Feature-Test-Macros.html)
