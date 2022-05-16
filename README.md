@@ -32,3 +32,5 @@ O editor é [Kilo](https://github.com/antirez/kilo) do usuário [Antirez](https:
 * Ncurses: [https://en.wikipedia.org/wiki/Ncurses](https://en.wikipedia.org/wiki/Ncurses)
 * Terminfo database: [https://en.wikipedia.org/wiki/Terminfo](https://en.wikipedia.org/wiki/Terminfo)
 * Feature Test Macro: [https://www.gnu.org/software/libc/manual/html_node/Feature-Test-Macros.html](https://www.gnu.org/software/libc/manual/html_node/Feature-Test-Macros.html)
+* Unix Time: [https://en.wikipedia.org/wiki/Unix_time](https://en.wikipedia.org/wiki/Unix_time)
+* Variadic Function: [https://en.wikipedia.org/wiki/Variadic_function](https://en.wikipedia.org/wiki/Variadic_function)
