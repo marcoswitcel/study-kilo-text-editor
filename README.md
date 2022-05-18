@@ -35,3 +35,4 @@ O editor é [Kilo](https://github.com/antirez/kilo) do usuário [Antirez](https:
 * Unix Time: [https://en.wikipedia.org/wiki/Unix_time](https://en.wikipedia.org/wiki/Unix_time)
 * Variadic Function: [https://en.wikipedia.org/wiki/Variadic_function](https://en.wikipedia.org/wiki/Variadic_function)
 * ASCII Table: [https://www.asciitable.com/](https://www.asciitable.com/)
+* One-pass compiler: [https://en.wikipedia.org/wiki/One-pass_compiler](https://en.wikipedia.org/wiki/One-pass_compiler)
