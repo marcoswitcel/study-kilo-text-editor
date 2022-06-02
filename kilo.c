@@ -556,8 +556,6 @@ void editorScroll() {
  * that row is not part of the file and can’t contain any text.
  */
 void editorDrawRows(struct abuf *ab) {
-  editorScroll();
-
   int y;
   for (y = 0; y < E.screenrows; y++) {
     int filerow = y + E.rowoff;
@@ -643,6 +641,8 @@ void editorDrawMessageBar(struct abuf *ab) {
 }
 
 void editorRefreshScreen() {
+  editorScroll();
+
   struct abuf ab = ABUF_INIT;
 
   abAppend(&ab, "\x1b[?25l", 6);
