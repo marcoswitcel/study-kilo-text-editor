@@ -16,6 +16,10 @@ Vim a conhecer esse incrível tutorial graças a uma publicação que li no Medi
   * Teclas de atalhos e comandos
   * Barra com informação de linha e coluna
 
+## Tags
+
+* Tutorial concluído, tag com todos recursos orignais implementados: [https://github.com/marcoswitcel/study-kilo-text-editor/releases/tag/tutorial-finalizado](https://github.com/marcoswitcel/study-kilo-text-editor/releases/tag/tutorial-finalizado)
+
 ## Referências
 
 ### Antirez
